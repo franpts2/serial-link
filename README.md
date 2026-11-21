@@ -1,12 +1,17 @@
-# serial link - Serial Port Protocol
+# Serial Link
 
-This repository contains an implementation of a simple serial-port-based file transfer protocol. The project includes:
+A serial-port file transfer protocol with a virtual cable that injects noise and disconnections.
 
-- A transmitter/receiver program (`bin/main`) that implements the link-layer and application-layer code.
-- A virtual cable program (`cable/`) that simulates a serial connection and can inject disconnections and noise for testing.
-- Source files in `src/` for the link and application layers.
+> **Fork:** Fork of [maluviieira/serial-link](https://github.com/maluviieira/serial-link). The original project has no license file; this fork keeps the original attribution.
 
-This README explains how to build, run and test the project.
+<p align="left">
+  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+</p>
+
+## About
+
+This repository contains an implementation of a simple serial-port-based file transfer protocol: a transmitter/receiver pair plus a virtual cable that can inject disconnections and noise for testing.
 
 ## Prerequisites
 
@@ -18,7 +23,7 @@ This README explains how to build, run and test the project.
 sudo apt-get update && sudo apt-get install -y socat
 ```
 
-## Project structure
+## Project Structure
 
 - `bin/` — compiled executables (created by `make`).
 - `cable/` — virtual cable program source and built binary (do not modify `cable/cable`).
@@ -26,7 +31,7 @@ sudo apt-get update && sudo apt-get install -y socat
 - `Makefile` — build targets and helpers (build, run, test).
 - `penguin.gif` — example file used for transfer tests.
 
-## Build
+## Quick Start
 
 To compile the application and the virtual cable program, run:
 
@@ -120,7 +125,9 @@ Run `make` without arguments to inspect available targets.
 - If the pseudo-terminals differ from `/dev/ttyS10` or `/dev/ttyS11`, use the printed device names from the cable program.
 - Use `strace` or `gdb` for low-level debugging of the binaries if they crash.
 
-## Development Team
+## Team & Course
+
+**Team**
 
 This project was developed by:
 
@@ -129,6 +136,14 @@ This project was developed by:
 
 **Disclaimer**: This team developed only part of the code in the /src folder. The rest was given to us by our professors at FEUP.
 
-## Course Information
+**Course**
 
 Developed for the RCOM (Computer Networks) course at FEUP (Faculty of Engineering, University of Porto).
+
+## License
+
+Coursework submitted at FEUP. Shared for reference; all rights reserved unless stated otherwise.
+
+---
+
+_Serial Link — reliable bytes over an unreliable cable._
